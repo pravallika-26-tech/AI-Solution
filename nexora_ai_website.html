@@ -1,0 +1,2114 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexora AI — Intelligent AI Solutions for a Smarter Future</title>
+
+  <!-- Google Fonts: Space Grotesk for headings & Plus Jakarta Sans for clean UI/body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome 6 Free Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    /* ==================== CSS VARIABLES & THEME TOKENS ==================== */
+    :root {
+      --bg-primary: #050811;
+      --bg-secondary: #090e1d;
+      --bg-card: rgba(13, 20, 38, 0.78);
+      --bg-card-hover: rgba(19, 29, 54, 0.92);
+      --border-subtle: rgba(56, 189, 248, 0.16);
+      --border-glow: rgba(129, 140, 248, 0.45);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent-cyan: #22d3ee;
+      --accent-blue: #3b82f6;
+      --accent-purple: #8b5cf6;
+      --gradient-main: linear-gradient(135deg, #22d3ee 0%, #3b82f6 50%, #8b5cf6 100%);
+      --gradient-soft: linear-gradient(135deg, rgba(34, 211, 238, 0.14), rgba(139, 92, 246, 0.14));
+      --shadow-glow: 0 20px 50px -15px rgba(59, 130, 246, 0.28);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-pill: 9999px;
+      --transition: 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    /* ==================== BASE RESET & TYPOGRAPHY ==================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
+    }
+
+    body {
+      font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2, h3, h4, .font-display {
+      font-family: "Space Grotesk", sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, textarea {
+      font-family: inherit;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding: 0 32px;
+      }
+    }
+
+    /* ==================== SHARED SECTION & GRADIENT UTILITIES ==================== */
+    .section {
+      position: relative;
+      padding: 84px 0;
+    }
+
+    @media (min-width: 768px) {
+      .section {
+        padding: 104px 0;
+      }
+    }
+
+    .section-alt {
+      background: linear-gradient(180deg, rgba(9, 14, 29, 0.65) 0%, rgba(5, 8, 17, 0.95) 100%);
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 56px;
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      background: var(--gradient-soft);
+      border: 1px solid var(--border-subtle);
+      color: var(--accent-cyan);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-size: clamp(1.85rem, 4vw, 2.75rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 14px;
+    }
+
+    .section-subtitle {
+      color: var(--text-secondary);
+      font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+    }
+
+    .gradient-text {
+      background: var(--gradient-main);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* ==================== BUTTONS ==================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 26px;
+      border-radius: var(--radius-pill);
+      font-weight: 600;
+      font-size: 0.95rem;
+      border: none;
+      cursor: pointer;
+      transition: transform var(--transition), box-shadow var(--transition), background var(--transition), border-color var(--transition);
+      min-height: 44px;
+    }
+
+    .btn-primary {
+      background: var(--gradient-main);
+      color: #ffffff;
+      box-shadow: 0 10px 28px -6px rgba(59, 130, 246, 0.55);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px -6px rgba(139, 92, 246, 0.65);
+    }
+
+    .btn-secondary {
+      background: rgba(15, 23, 42, 0.72);
+      color: var(--text-primary);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-cyan);
+      background: rgba(34, 211, 238, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .btn-sm {
+      padding: 9px 18px;
+      font-size: 0.85rem;
+      min-height: 38px;
+    }
+
+    /* ==================== FIXED NAVIGATION BAR ==================== */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(5, 8, 17, 0.72);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      transition: background var(--transition), box-shadow var(--transition), border-color var(--transition);
+    }
+
+    .navbar.scrolled {
+      background: rgba(5, 8, 17, 0.94);
+      border-bottom-color: var(--border-subtle);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+      gap: 16px;
+    }
+
+    .brand-logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: var(--gradient-main);
+      display: grid;
+      place-items: center;
+      color: #ffffff;
+      font-size: 1rem;
+      box-shadow: 0 0 20px rgba(34, 211, 238, 0.35);
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      position: relative;
+      padding: 4px 0;
+      transition: color var(--transition);
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 2px;
+      background: var(--gradient-main);
+      transition: width var(--transition);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text-primary);
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      width: 100%;
+    }
+
+    .nav-cta-desktop {
+      display: none;
+    }
+
+    .mobile-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      font-size: 1.15rem;
+      cursor: pointer;
+    }
+
+    @media (min-width: 1024px) {
+      .nav-links {
+        display: flex;
+      }
+      .nav-cta-desktop {
+        display: inline-flex;
+      }
+      .mobile-toggle {
+        display: none;
+      }
+    }
+
+    /* Mobile Drawer Menu */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      padding: 16px 20px 24px;
+      background: rgba(7, 11, 24, 0.98);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a {
+      padding: 12px 14px;
+      border-radius: 12px;
+      color: var(--text-secondary);
+      font-weight: 500;
+      transition: background var(--transition), color var(--transition);
+    }
+
+    .mobile-menu a:hover {
+      background: rgba(59, 130, 246, 0.12);
+      color: var(--text-primary);
+    }
+
+    /* ==================== 1. HERO SECTION ==================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 96px;
+      padding-bottom: 64px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 18% 22%, rgba(34, 211, 238, 0.16), transparent 42%),
+        radial-gradient(circle at 82% 28%, rgba(139, 92, 246, 0.18), transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(59, 130, 246, 0.14), transparent 50%),
+        var(--bg-primary);
+    }
+
+    /* Animated grid & floating orbs */
+    .hero-grid-bg {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.05) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse at center, black 35%, transparent 80%);
+      -webkit-mask-image: radial-gradient(ellipse at center, black 35%, transparent 80%);
+      pointer-events: none;
+    }
+
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      pointer-events: none;
+      animation: floatOrb 9s ease-in-out infinite;
+    }
+
+    .hero-orb-1 {
+      width: 320px;
+      height: 320px;
+      top: 10%;
+      right: 8%;
+      background: rgba(34, 211, 238, 0.18);
+    }
+
+    .hero-orb-2 {
+      width: 280px;
+      height: 280px;
+      bottom: 12%;
+      left: 5%;
+      background: rgba(139, 92, 246, 0.2);
+      animation-delay: -4s;
+    }
+
+    @keyframes floatOrb {
+      0%, 100% { transform: translateY(0px) scale(1); }
+      50% { transform: translateY(-22px) scale(1.05); }
+    }
+
+    .hero-layout {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .hero-layout {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 44px;
+      }
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 16px;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border-subtle);
+      color: var(--accent-cyan);
+      font-size: 0.82rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.35rem, 5.5vw, 4rem);
+      font-weight: 700;
+      line-height: 1.08;
+      margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      color: var(--text-secondary);
+      max-width: 580px;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    /* Futuristic Neural Core Visual Card */
+    .neural-visual {
+      position: relative;
+      background: linear-gradient(160deg, rgba(15, 23, 42, 0.88), rgba(9, 14, 29, 0.94));
+      border: 1px solid var(--border-subtle);
+      border-radius: 26px;
+      padding: 28px;
+      box-shadow: var(--shadow-glow);
+    }
+
+    .neural-ring-wrap {
+      position: relative;
+      width: 220px;
+      height: 220px;
+      margin: 8px auto 24px;
+      display: grid;
+      place-items: center;
+    }
+
+    .neural-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1px dashed rgba(34, 211, 238, 0.45);
+      animation: spinSlow 18s linear infinite;
+    }
+
+    .neural-ring-inner {
+      position: absolute;
+      inset: 26px;
+      border-radius: 50%;
+      border: 1px solid rgba(139, 92, 246, 0.5);
+      animation: spinReverse 12s linear infinite;
+    }
+
+    .neural-core {
+      width: 108px;
+      height: 108px;
+      border-radius: 28px;
+      background: var(--gradient-main);
+      display: grid;
+      place-items: center;
+      font-size: 2.4rem;
+      color: #ffffff;
+      box-shadow: 0 0 40px rgba(34, 211, 238, 0.45);
+      animation: pulseCore 3.5s ease-in-out infinite;
+    }
+
+    @keyframes spinSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    @keyframes spinReverse {
+      from { transform: rotate(360deg); }
+      to { transform: rotate(0deg); }
+    }
+
+    @keyframes pulseCore {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .neural-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .neural-mini-card {
+      background: rgba(5, 8, 17, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      border-radius: 14px;
+      padding: 12px 14px;
+    }
+
+    .neural-mini-card span {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    .neural-mini-card strong {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1rem;
+      color: var(--accent-cyan);
+    }
+
+    /* ==================== 2. ABOUT & STATS ==================== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    @media (min-width: 992px) {
+      .about-grid {
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 48px;
+      }
+    }
+
+    .about-pillars {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .pillar-chip {
+      padding: 8px 14px;
+      border-radius: var(--radius-pill);
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.28);
+      color: #cbd5e1;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .stat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      text-align: center;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-glow);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .stat-value {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.75rem, 3vw, 2.35rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    /* ==================== 3. AI PRODUCTS ==================== */
+    .products-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 640px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1100px) {
+      .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .product-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform var(--transition), background var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .product-card:hover {
+      transform: translateY(-7px);
+      background: var(--bg-card-hover);
+      border-color: var(--border-glow);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: var(--gradient-soft);
+      border: 1px solid rgba(34, 211, 238, 0.28);
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      color: var(--accent-cyan);
+      margin-bottom: 20px;
+    }
+
+    .product-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      color: var(--text-secondary);
+      font-size: 0.93rem;
+      margin-bottom: 22px;
+    }
+
+    /* ==================== 4. KEY FEATURES ==================== */
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 640px) {
+      .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      transition: transform var(--transition), border-color var(--transition);
+    }
+
+    .feature-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(34, 211, 238, 0.45);
+    }
+
+    .feature-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: rgba(59, 130, 246, 0.14);
+      color: var(--accent-cyan);
+      display: grid;
+      place-items: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .feature-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 4px;
+    }
+
+    .feature-card p {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+    }
+
+    /* ==================== 5. APPLICATIONS / USE CASES ==================== */
+    .usecases-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 640px) {
+      .usecases-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .usecases-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .usecase-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 26px 24px;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .usecase-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-glow);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .usecase-card h3 {
+      font-size: 1.18rem;
+      margin-bottom: 8px;
+    }
+
+    .usecase-card p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* ==================== 6. HOW THE TECHNOLOGY WORKS ==================== */
+    .workflow-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 22px;
+    }
+
+    @media (min-width: 640px) {
+      .workflow-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .workflow-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .step-card {
+      position: relative;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 26px 22px;
+      transition: transform var(--transition), border-color var(--transition);
+    }
+
+    .step-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent-cyan);
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--gradient-main);
+      color: #ffffff;
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+    }
+
+    .step-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .step-card p {
+      color: var(--text-secondary);
+      font-size: 0.89rem;
+    }
+
+    /* ==================== 7. TEAM MEMBERS ==================== */
+    .team-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 640px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1100px) {
+      .team-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .team-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 26px 22px;
+      text-align: center;
+      transition: transform var(--transition), border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .team-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-glow);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .avatar-placeholder {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      background: var(--gradient-main);
+      display: grid;
+      place-items: center;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      border: 3px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .team-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 4px;
+    }
+
+    .team-role {
+      display: block;
+      color: var(--accent-cyan);
+      font-size: 0.84rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .team-card p {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+    }
+
+    /* ==================== 8. TESTIMONIALS ==================== */
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .testimonials-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform var(--transition), border-color var(--transition);
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--border-glow);
+    }
+
+    .quote-mark {
+      color: var(--accent-purple);
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    .testimonial-text {
+      color: #e2e8f0;
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+
+    .client-name {
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text-primary);
+    }
+
+    .client-meta {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+    }
+
+    /* ==================== 9. CONTACT SECTION ==================== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+
+    @media (min-width: 992px) {
+      .contact-grid {
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 44px;
+      }
+    }
+
+    .contact-form-box,
+    .contact-info-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+    }
+
+    @media (min-width: 640px) {
+      .contact-form-box,
+      .contact-info-box {
+        padding: 34px;
+      }
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 640px) {
+      .form-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: #cbd5e1;
+      margin-bottom: 7px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 12px 15px;
+      border-radius: 12px;
+      background: rgba(5, 8, 17, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      color: var(--text-primary);
+      font-size: 0.93rem;
+      transition: border-color var(--transition), box-shadow var(--transition);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--accent-cyan);
+      box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.15);
+    }
+
+    textarea.form-control {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-feedback {
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 12px;
+      font-size: 0.88rem;
+      display: none;
+    }
+
+    .form-feedback.success {
+      display: block;
+      background: rgba(34, 211, 238, 0.12);
+      border: 1px solid rgba(34, 211, 238, 0.4);
+      color: #a5f3fc;
+    }
+
+    .form-feedback.error {
+      display: block;
+      background: rgba(244, 63, 94, 0.14);
+      border: 1px solid rgba(244, 63, 94, 0.45);
+      color: #fecdd3;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .info-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--gradient-soft);
+      border: 1px solid var(--border-subtle);
+      color: var(--accent-cyan);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .info-item h4 {
+      font-size: 0.95rem;
+      margin-bottom: 2px;
+    }
+
+    .info-item p,
+    .info-item a {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .info-item a:hover {
+      color: var(--accent-cyan);
+    }
+
+    .social-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .social-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      display: grid;
+      place-items: center;
+      color: var(--text-primary);
+      transition: transform var(--transition), background var(--transition), border-color var(--transition);
+    }
+
+    .social-btn:hover {
+      transform: translateY(-3px);
+      background: var(--gradient-main);
+      border-color: transparent;
+      color: #ffffff;
+    }
+
+    /* ==================== 10. FOOTER ==================== */
+    .footer {
+      background: #03050c;
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      padding: 64px 0 32px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 36px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    }
+
+    @media (min-width: 640px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      }
+    }
+
+    .footer-brand p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+      margin-top: 14px;
+      max-width: 320px;
+    }
+
+    .footer h4 {
+      font-size: 1rem;
+      margin-bottom: 16px;
+      color: var(--text-primary);
+    }
+
+    .footer ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer ul a {
+      color: var(--text-secondary);
+      font-size: 0.89rem;
+      transition: color var(--transition);
+    }
+
+    .footer ul a:hover {
+      color: var(--accent-cyan);
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    @media (min-width: 640px) {
+      .footer-bottom {
+        flex-direction: row;
+        text-align: left;
+      }
+    }
+
+    /* ==================== MODAL FOR PRODUCT DETAILS & LEGAL ==================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      background: rgba(2, 4, 10, 0.78);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.active {
+      display: flex;
+    }
+
+    .modal-card {
+      width: 100%;
+      max-width: 540px;
+      background: #0b1224;
+      border: 1px solid var(--border-glow);
+      border-radius: 22px;
+      padding: 28px 24px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.65);
+      position: relative;
+      animation: modalPop 0.25s ease-out;
+    }
+
+    @keyframes modalPop {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.07);
+      border: none;
+      color: var(--text-primary);
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    .modal-list {
+      margin: 16px 0 22px;
+      padding-left: 20px;
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+    }
+
+    .modal-list li {
+      margin-bottom: 8px;
+    }
+
+    /* ==================== SCROLL REVEAL ANIMATIONS ==================== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== FIXED NAVIGATION BAR ==================== -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand-logo" aria-label="Nexora AI Home">
+        <span class="brand-mark"><i class="fa-solid fa-microchip"></i></span>
+        <span>Nexora <span class="gradient-text">AI</span></span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#products">Products</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#use-cases">Use Cases</a></li>
+          <li><a href="#workflow">How It Works</a></li>
+          <li><a href="#team">Team</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="#contact" class="btn btn-primary btn-sm nav-cta-desktop">Get Started</a>
+
+      <button
+        type="button"
+        class="mobile-toggle"
+        id="mobileToggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+      >
+        <i class="fa-solid fa-bars" id="mobileToggleIcon"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#features">Features</a>
+      <a href="#use-cases">Use Cases</a>
+      <a href="#workflow">How It Works</a>
+      <a href="#team">Team</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==================== 1. HERO SECTION ==================== -->
+    <section class="hero" id="home">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-1" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-2" aria-hidden="true"></div>
+
+      <div class="container hero-layout">
+        <div>
+          <div class="hero-badge">
+            <i class="fa-solid fa-sparkles"></i>
+            <span>Next-Gen Enterprise AI Suite</span>
+          </div>
+
+          <h1 class="hero-title">
+            Intelligent AI Solutions for a <span class="gradient-text">Smarter Future</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Nexora AI builds practical, scalable artificial intelligence products that help modern businesses automate workflows, unlock predictive insights, and deliver smarter customer experiences.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary">
+              <span>Explore Products</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span>Contact Us</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Animated Abstract AI Core Card -->
+        <aside class="neural-visual" aria-label="Nexora AI Core Architecture Preview">
+          <div class="neural-ring-wrap">
+            <div class="neural-ring"></div>
+            <div class="neural-ring-inner"></div>
+            <div class="neural-core">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+          </div>
+
+          <div class="neural-metrics">
+            <div class="neural-mini-card">
+              <span>Inference Latency</span>
+              <strong>&lt; 28 ms</strong>
+            </div>
+            <div class="neural-mini-card">
+              <span>Active Pipelines</span>
+              <strong>Real-Time</strong>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ==================== 2. ABOUT THE COMPANY ==================== -->
+    <section class="section section-alt" id="about">
+      <div class="container about-grid reveal">
+        <div>
+          <span class="section-tag"><i class="fa-solid fa-building"></i> About Nexora AI</span>
+          <h2 class="section-title">Building Responsible, <span class="gradient-text">Practical AI</span></h2>
+          <p class="section-subtitle">
+            Our mission at Nexora AI is to make high-impact artificial intelligence reliable, transparent, and accessible for growing enterprises. We combine <strong>artificial intelligence</strong>, <strong>machine learning</strong>, <strong>natural language processing</strong>, <strong>computer vision</strong>, and <strong>automation</strong> to solve everyday operational bottlenecks without unnecessary complexity.
+          </p>
+
+          <div class="about-pillars">
+            <span class="pillar-chip"><i class="fa-solid fa-robot"></i> AI &amp; Automation</span>
+            <span class="pillar-chip"><i class="fa-solid fa-network-wired"></i> Machine Learning</span>
+            <span class="pillar-chip"><i class="fa-solid fa-comments"></i> Natural Language Processing</span>
+            <span class="pillar-chip"><i class="fa-solid fa-eye"></i> Computer Vision</span>
+          </div>
+        </div>
+
+        <div class="stats-grid" id="statsGrid">
+          <div class="stat-card">
+            <div class="stat-value gradient-text" data-target="50" data-suffix="+">50+</div>
+            <div class="stat-label">AI Models</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value gradient-text" data-target="10" data-suffix="+">10+</div>
+            <div class="stat-label">Industries</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value gradient-text" data-target="99.9" data-suffix="%">99.9%</div>
+            <div class="stat-label">Uptime</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value gradient-text">24/7</div>
+            <div class="stat-label">Support</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 3. AI PRODUCTS ==================== -->
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag"><i class="fa-solid fa-cube"></i> Core Product Suite</span>
+          <h2 class="section-title">Flagship <span class="gradient-text">AI Products</span></h2>
+          <p class="section-subtitle">
+            Purpose-built AI platforms engineered to integrate smoothly with your existing business tools.
+          </p>
+        </div>
+
+        <div class="products-grid reveal">
+          <!-- Product 1 -->
+          <article class="product-card">
+            <div>
+              <div class="icon-box"><i class="fa-solid fa-message-bot"></i></div>
+              <h3>Nexora Chat</h3>
+              <p>AI chatbot for customer support that resolves FAQs, triages tickets, and assists users 24/7 in natural language.</p>
+            </div>
+            <button type="button" class="btn btn-secondary btn-sm" data-product="chat">
+              Learn More <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </article>
+
+          <!-- Product 2 -->
+          <article class="product-card">
+            <div>
+              <div class="icon-box"><i class="fa-solid fa-eye"></i></div>
+              <h3>Nexora Vision</h3>
+              <p>Computer vision for image and video analysis, defect inspection, object detection, and visual quality assurance.</p>
+            </div>
+            <button type="button" class="btn btn-secondary btn-sm" data-product="vision">
+              Learn More <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </article>
+
+          <!-- Product 3 -->
+          <article class="product-card">
+            <div>
+              <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
+              <h3>Nexora Analytics</h3>
+              <p>Predictive analytics and business insights that forecast demand, spot anomalies, and guide data-backed decisions.</p>
+            </div>
+            <button type="button" class="btn btn-secondary btn-sm" data-product="analytics">
+              Learn More <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </article>
+
+          <!-- Product 4 -->
+          <article class="product-card">
+            <div>
+              <div class="icon-box"><i class="fa-solid fa-gears"></i></div>
+              <h3>Nexora Automate</h3>
+              <p>Workflow automation using AI to streamline document routing, approvals, and repetitive multi-step operations.</p>
+            </div>
+            <button type="button" class="btn btn-secondary btn-sm" data-product="automate">
+              Learn More <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 4. KEY FEATURES ==================== -->
+    <section class="section section-alt" id="features">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag"><i class="fa-solid fa-sliders"></i> Platform Capabilities</span>
+          <h2 class="section-title">Key <span class="gradient-text">Features</span></h2>
+          <p class="section-subtitle">
+            Designed for performance, security, and effortless adoption across engineering and business teams.
+          </p>
+        </div>
+
+        <div class="features-grid reveal">
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-language"></i></div>
+            <div>
+              <h3>Natural Language Processing</h3>
+              <p>Understand intent, summarize text, and power human-like conversations at scale.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-brain"></i></div>
+            <div>
+              <h3>Machine Learning Models</h3>
+              <p>Train and deploy adaptive models tailored to your proprietary business datasets.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+            <div>
+              <h3>Real-Time Data Analysis</h3>
+              <p>Process live event streams and surface actionable alerts within milliseconds.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-cloud"></i></div>
+            <div>
+              <h3>Cloud-Based AI Platform</h3>
+              <p>Auto-scaling cloud infrastructure built for elastic workloads and global reach.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <h3>Data Privacy and Security</h3>
+              <p>End-to-end encryption, role-based access controls, and strict tenant isolation.</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon"><i class="fa-solid fa-plug"></i></div>
+            <div>
+              <h3>Easy API Integration</h3>
+              <p>Connect REST and webhook endpoints cleanly with clear SDKs and documentation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 5. APPLICATIONS / USE CASES ==================== -->
+    <section class="section" id="use-cases">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag"><i class="fa-solid fa-industry"></i> Industry Impact</span>
+          <h2 class="section-title">Applications &amp; <span class="gradient-text">Use Cases</span></h2>
+          <p class="section-subtitle">
+            See how organizations apply Nexora AI across high-demand operational domains.
+          </p>
+        </div>
+
+        <div class="usecases-grid reveal">
+          <article class="usecase-card">
+            <div class="icon-box"><i class="fa-solid fa-heart-pulse"></i></div>
+            <h3>Healthcare</h3>
+            <p>Assist triage workflows, digitize clinical records, and monitor diagnostic imaging pipelines.</p>
+          </article>
+
+          <article class="usecase-card">
+            <div class="icon-box"><i class="fa-solid fa-coins"></i></div>
+            <h3>Finance</h3>
+            <p>Detect suspicious transaction patterns, automate KYC checks, and forecast cash flow risks.</p>
+          </article>
+
+          <article class="usecase-card">
+            <div class="icon-box"><i class="fa-solid fa-bag-shopping"></i></div>
+            <h3>E-commerce</h3>
+            <p>Personalize product discovery, predict inventory demand, and speed up order support.</p>
+          </article>
+
+          <article class="usecase-card">
+            <div class="icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
+            <h3>Education</h3>
+            <p>Provide instant study assistants, summarize course materials, and track learning progress.</p>
+          </article>
+
+          <article class="usecase-card">
+            <div class="icon-box"><i class="fa-solid fa-industry"></i></div>
+            <h3>Manufacturing</h3>
+            <p>Spot assembly defects via computer vision and schedule predictive equipment maintenance.</p>
+          </article>
+
+          <article class="usecase-card">
+            <div class="icon-box"><i class="fa-solid fa-headset"></i></div>
+            <h3>Customer Support</h3>
+            <p>Automate routine inquiries, route complex cases to agents, and boost response speed.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 6. HOW THE TECHNOLOGY WORKS ==================== -->
+    <section class="section section-alt" id="workflow">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag"><i class="fa-solid fa-diagram-project"></i> AI Lifecycle</span>
+          <h2 class="section-title">How the <span class="gradient-text">Technology Works</span></h2>
+          <p class="section-subtitle">
+            A structured four-stage pipeline from raw business data to continuous model improvement.
+          </p>
+        </div>
+
+        <div class="workflow-grid reveal">
+          <div class="step-card">
+            <div class="step-number">01</div>
+            <h3>Data Collection</h3>
+            <p>Ingest structured and unstructured data securely from approved databases, documents, and feeds.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">02</div>
+            <h3>Model Training</h3>
+            <p>Clean, label, and train domain-specific machine learning or NLP models with validation checks.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">03</div>
+            <h3>AI Prediction</h3>
+            <p>Serve fast, real-time predictions, classifications, or automated actions via secure APIs.</p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-number">04</div>
+            <h3>Continuous Improvement</h3>
+            <p>Monitor accuracy metrics and human feedback loops to refine models as business needs evolve.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 7. TEAM MEMBERS ==================== -->
+    <section class="section" id="team">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag"><i class="fa-solid fa-users"></i> Leadership &amp; Builders</span>
+          <h2 class="section-title">Meet <span class="gradient-text">Our Team</span></h2>
+          <p class="section-subtitle">
+            Researchers, engineers, and designers dedicated to crafting dependable AI products.
+          </p>
+        </div>
+
+        <div class="team-grid reveal">
+          <article class="team-card">
+            <div class="avatar-placeholder" aria-hidden="true">AK</div>
+            <h3>Aarav Kulkarni</h3>
+            <span class="team-role">CEO / Founder</span>
+            <p>Leads company vision, enterprise partnerships, and responsible AI strategy across markets.</p>
+          </article>
+
+          <article class="team-card">
+            <div class="avatar-placeholder" aria-hidden="true">MR</div>
+            <h3>Meera Ramanathan</h3>
+            <span class="team-role">Chief Technology Officer</span>
+            <p>Architects scalable cloud inference systems, security standards, and API reliability.</p>
+          </article>
+
+          <article class="team-card">
+            <div class="avatar-placeholder" aria-hidden="true">DS</div>
+            <h3>Devansh Sharma</h3>
+            <span class="team-role">AI Research Lead</span>
+            <p>Specializes in natural language processing, computer vision models, and evaluation benchmarks.</p>
+          </article>
+
+          <article class="team-card">
+            <div class="avatar-placeholder" aria-hidden="true">PN</div>
+            <h3>Priya Nair</h3>
+            <span class="team-role">Product Designer</span>
+            <p>Crafts intuitive dashboards, conversational workflows, and accessible user experiences.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 8. TESTIMONIALS ==================== -->
+    <section class="section section-alt" id="testimonials">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag"><i class="fa-solid fa-quote-left"></i> Client Stories</span>
+          <h2 class="section-title">Trusted by <span class="gradient-text">Modern Teams</span></h2>
+          <p class="section-subtitle">
+            Hear how teams use Nexora AI to save time and improve operational clarity.
+          </p>
+        </div>
+
+        <div class="testimonials-grid reveal">
+          <article class="testimonial-card">
+            <div>
+              <div class="quote-mark"><i class="fa-solid fa-quote-left"></i></div>
+              <p class="testimonial-text">
+                “Nexora Chat cut our first-response wait times dramatically while keeping support handoffs smooth for complex customer tickets.”
+              </p>
+            </div>
+            <div>
+              <div class="client-name">Rohan Verma</div>
+              <div class="client-meta">VP of Customer Operations · FinPulse India</div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div>
+              <div class="quote-mark"><i class="fa-solid fa-quote-left"></i></div>
+              <p class="testimonial-text">
+                “Deploying Nexora Vision on our packaging line helped catch labeling issues early without slowing down daily production.”
+              </p>
+            </div>
+            <div>
+              <div class="client-name">Ananya Chatterjee</div>
+              <div class="client-meta">Head of Quality Systems · Kaveri MedTech</div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div>
+              <div class="quote-mark"><i class="fa-solid fa-quote-left"></i></div>
+              <p class="testimonial-text">
+                “Nexora Analytics and Automate gave our merchandising team clear weekly demand forecasts and saved hours of manual reporting.”
+              </p>
+            </div>
+            <div>
+              <div class="client-name">Karthik Subramanian</div>
+              <div class="client-meta">Director of Digital Commerce · UrbanKart Retail</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 9. CONTACT SECTION ==================== -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-tag"><i class="fa-solid fa-envelope"></i> Get In Touch</span>
+          <h2 class="section-title">Contact <span class="gradient-text">Nexora AI</span></h2>
+          <p class="section-subtitle">
+            Have a project idea, product question, or demo request? Send us a message and our team will respond promptly.
+          </p>
+        </div>
+
+        <div class="contact-grid reveal">
+          <!-- Contact Form -->
+          <div class="contact-form-box">
+            <form id="contactForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Name *</label>
+                  <input type="text" id="name" name="name" class="form-control" placeholder="Your full name" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="you@company.com" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">Subject *</label>
+                <input type="text" id="subject" name="subject" class="form-control" placeholder="Product demo, partnership, or inquiry" required />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" class="form-control" placeholder="Tell us about your goals or questions..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                <span>Send Message</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+
+              <div class="form-feedback" id="formFeedback" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+
+          <!-- Company Contact Details & Socials -->
+          <aside class="contact-info-box">
+            <h3 class="font-display" style="font-size: 1.35rem; margin-bottom: 20px;">Direct Contact</h3>
+
+            <div class="info-item">
+              <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <h4>Email</h4>
+                <a href="mailto:contact@nexoraai.com">contact@nexoraai.com</a>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <h4>Phone</h4>
+                <a href="tel:+919876543210">+91 98765 43210</a>
+              </div>
+            </div>
+
+            <div class="info-item">
+              <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <h4>Office Address</h4>
+                <p>Bengaluru, India</p>
+              </div>
+            </div>
+
+            <div class="social-links" aria-label="Social Media Links">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin-in"></i>
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="X (Twitter)">
+                <i class="fa-brands fa-x-twitter"></i>
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="GitHub">
+                <i class="fa-brands fa-github"></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 10. FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#home" class="brand-logo">
+            <span class="brand-mark"><i class="fa-solid fa-microchip"></i></span>
+            <span>Nexora <span class="gradient-text">AI</span></span>
+          </a>
+          <p>
+            Building intelligent, responsible AI products for businesses across industries from Bengaluru, India.
+          </p>
+        </div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#features">Key Features</a></li>
+            <li><a href="#workflow">How It Works</a></li>
+            <li><a href="#team">Our Team</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Products</h4>
+          <ul>
+            <li><a href="#products">Nexora Chat</a></li>
+            <li><a href="#products">Nexora Vision</a></li>
+            <li><a href="#products">Nexora Analytics</a></li>
+            <li><a href="#products">Nexora Automate</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#footer" id="openPrivacyModal">Privacy Policy</a></li>
+            <li><a href="#footer" id="openTermsModal">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year">2026</span> Nexora AI. All rights reserved.</p>
+        <p>Crafted with HTML5, CSS3 &amp; Vanilla JavaScript.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== INTERACTIVE INFO MODAL ==================== -->
+  <div class="modal-backdrop" id="infoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button type="button" class="modal-close" id="closeModalBtn" aria-label="Close dialog">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <span class="section-tag" id="modalTag">Product Overview</span>
+      <h3 class="font-display" id="modalTitle" style="font-size: 1.5rem; margin-bottom: 10px;"></h3>
+      <p id="modalDescription" style="color: var(--text-secondary); font-size: 0.94rem;"></p>
+      <ul class="modal-list" id="modalHighlights"></ul>
+      <a href="#contact" class="btn btn-primary btn-sm" id="modalCtaBtn">Request Demo</a>
+    </div>
+  </div>
+
+  <!-- ==================== VANILLA JAVASCRIPT ==================== -->
+  <script>
+    (function () {
+      "use strict";
+
+      // 1. Dynamic Copyright Year
+      const yearEl = document.getElementById("year");
+      if (yearEl) {
+        yearEl.textContent = String(new Date().getFullYear());
+      }
+
+      // 2. Sticky Navbar Scroll Effect & Active Link Highlighting
+      const navbar = document.getElementById("navbar");
+      const navLinks = document.querySelectorAll("#navLinks a");
+      const sections = document.querySelectorAll("main section[id]");
+
+      function handleScroll() {
+        if (navbar) {
+          navbar.classList.toggle("scrolled", window.scrollY > 24);
+        }
+
+        const scrollPosition = window.scrollY + 120;
+        sections.forEach((section) => {
+          const top = section.offsetTop;
+          const height = section.offsetHeight;
+          const id = section.getAttribute("id");
+
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            navLinks.forEach((link) => {
+              link.classList.toggle("active", link.getAttribute("href") === `#${id}`);
+            });
+          }
+        });
+      }
+
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      handleScroll();
+
+      // 3. Mobile Navigation Drawer Toggle
+      const mobileToggle = document.getElementById("mobileToggle");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const mobileToggleIcon = document.getElementById("mobileToggleIcon");
+
+      function setMobileMenuState(isOpen) {
+        if (!mobileMenu || !mobileToggle || !mobileToggleIcon) return;
+        mobileMenu.classList.toggle("open", isOpen);
+        mobileToggle.setAttribute("aria-expanded", String(isOpen));
+        mobileToggleIcon.className = isOpen ? "fa-solid fa-xmark" : "fa-solid fa-bars";
+      }
+
+      mobileToggle?.addEventListener("click", () => {
+        const currentlyOpen = mobileMenu?.classList.contains("open") || false;
+        setMobileMenuState(!currentlyOpen);
+      });
+
+      mobileMenu?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => setMobileMenuState(false));
+      });
+
+      // 4. Intersection Observer for Smooth Scroll Reveal Animations
+      const revealEls = document.querySelectorAll(".reveal");
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+
+        revealEls.forEach((el) => observer.observe(el));
+      } else {
+        revealEls.forEach((el) => el.classList.add("visible"));
+      }
+
+      // 5. Product & Legal Modal Data and Handlers
+      const PRODUCT_DETAILS = {
+        chat: {
+          tag: "Conversational AI",
+          title: "Nexora Chat",
+          description:
+            "An intelligent customer support assistant powered by natural language processing to answer questions, look up order or ticket status, and escalate smoothly to human agents.",
+          highlights: [
+            "Multi-turn context awareness and customizable brand tone",
+            "Seamless handoff to live support teams with chat summaries",
+            "Ready-to-embed web widget and REST API integration"
+          ]
+        },
+        vision: {
+          tag: "Computer Vision",
+          title: "Nexora Vision",
+          description:
+            "High-speed visual inspection and recognition models built to analyze images and video streams for quality control, safety monitoring, and visual search.",
+          highlights: [
+            "Real-time object detection, classification, and defect spotting",
+            "Supports batch image uploads and live camera feeds",
+            "Confidence scoring and audit logs for reliability"
+          ]
+        },
+        analytics: {
+          tag: "Predictive Intelligence",
+          title: "Nexora Analytics",
+          description:
+            "Turns historical and real-time operational data into clear forecasts, trend alerts, and scenario insights for leadership and operations teams.",
+          highlights: [
+            "Demand forecasting, churn signals, and anomaly detection",
+            "Exportable reports and webhook alerts for key thresholds",
+            "Role-based access controls for sensitive business metrics"
+          ]
+        },
+        automate: {
+          tag: "Intelligent Automation",
+          title: "Nexora Automate",
+          description:
+            "Automates repetitive multi-step business workflows—such as document extraction, routing, and approvals—combining rules with AI decision support.",
+          highlights: [
+            "Automated document parsing and structured data extraction",
+            "Approval rules with human-in-the-loop checkpoints",
+            "Detailed execution logs for easy troubleshooting"
+          ]
+        }
+      };
+
+      const LEGAL_DETAILS = {
+        privacy: {
+          tag: "Legal Information",
+          title: "Privacy Policy",
+          description:
+            "Nexora AI respects your privacy and processes contact inquiries and platform data strictly to deliver requested services and support.",
+          highlights: [
+            "We do not sell personal contact details to third-party data brokers.",
+            "Enterprise customers retain ownership of their training and inference data.",
+            "Contact contact@nexoraai.com for privacy or data deletion requests."
+          ]
+        },
+        terms: {
+          tag: "Legal Information",
+          title: "Terms of Service",
+          description:
+            "By accessing Nexora AI resources and demonstrations, you agree to use our platform responsibly and in compliance with applicable laws.",
+          highlights: [
+            "Do not use AI outputs or APIs for unlawful, harmful, or deceptive activity.",
+            "Service availability and SLA commitments are governed by active agreements.",
+            "All trademarks, logos, and documentation belong to Nexora AI."
+          ]
+        }
+      };
+
+      const infoModal = document.getElementById("infoModal");
+      const closeModalBtn = document.getElementById("closeModalBtn");
+      const modalCtaBtn = document.getElementById("modalCtaBtn");
+
+      function openModal(payload) {
+        if (!infoModal || !payload) return;
+        document.getElementById("modalTag").textContent = payload.tag;
+        document.getElementById("modalTitle").textContent = payload.title;
+        document.getElementById("modalDescription").textContent = payload.description;
+
+        const listEl = document.getElementById("modalHighlights");
+        listEl.innerHTML = payload.highlights.map((item) => `<li>${item}</li>`).join("");
+
+        infoModal.classList.add("active");
+      }
+
+      function closeModal() {
+        infoModal?.classList.remove("active");
+      }
+
+      document.querySelectorAll("[data-product]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const key = btn.getAttribute("data-product");
+          if (key && PRODUCT_DETAILS[key]) {
+            openModal(PRODUCT_DETAILS[key]);
+          }
+        });
+      });
+
+      document.getElementById("openPrivacyModal")?.addEventListener("click", (e) => {
+        e.preventDefault();
+        openModal(LEGAL_DETAILS.privacy);
+      });
+
+      document.getElementById("openTermsModal")?.addEventListener("click", (e) => {
+        e.preventDefault();
+        openModal(LEGAL_DETAILS.terms);
+      });
+
+      closeModalBtn?.addEventListener("click", closeModal);
+      modalCtaBtn?.addEventListener("click", closeModal);
+
+      infoModal?.addEventListener("click", (e) => {
+        if (e.target === infoModal) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && infoModal?.classList.contains("active")) {
+          closeModal();
+        }
+      });
+
+      // 6. Contact Form Validation & Submission Feedback
+      const contactForm = document.getElementById("contactForm");
+      const formFeedback = document.getElementById("formFeedback");
+
+      contactForm?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (!formFeedback) return;
+
+        const name = document.getElementById("name")?.value.trim() || "";
+        const email = document.getElementById("email")?.value.trim() || "";
+        const subject = document.getElementById("subject")?.value.trim() || "";
+        const message = document.getElementById("message")?.value.trim() || "";
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (!name || !email || !subject || !message) {
+          formFeedback.className = "form-feedback error";
+          formFeedback.textContent = "Please fill out all required fields before sending your message.";
+          return;
+        }
+
+        if (!emailPattern.test(email)) {
+          formFeedback.className = "form-feedback error";
+          formFeedback.textContent = "Please enter a valid email address (for example, name@company.com).";
+          return;
+        }
+
+        formFeedback.className = "form-feedback success";
+        formFeedback.textContent = `Thank you, ${name}! Your inquiry regarding “${subject}” has been recorded. Our Bengaluru team will reach out to ${email} soon.`;
+        contactForm.reset();
+      });
+    })();
+  </script>
+</body>
+</html>
